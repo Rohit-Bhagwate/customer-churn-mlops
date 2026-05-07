@@ -17,11 +17,16 @@ pipeline {
 
         stage('Run Pipeline') {
             steps {
-                sh '''
-                . venv/bin/activate
+                withCredentials([
+                    [$class: 'AmazonWebServicesCredentialsBinding',
+                     credentialsId: 'aws-credentials']
+                ]) {
+                    sh '''
+                    . venv/bin/activate
 
-                python3 -m src.pipeline.pipeline
-                '''
+                    python3 -m src.pipeline.pipeline
+                    '''
+                }
             }
         }
     }
