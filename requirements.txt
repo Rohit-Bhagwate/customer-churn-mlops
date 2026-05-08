@@ -5,3 +5,4 @@ boto3
 joblib
 flask
 mlflow
+uvicorn
