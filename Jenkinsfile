@@ -70,7 +70,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 sh '''
-                ssh -o StrictHostKeyChecking=no ubuntu@YOUR_EC2_IP << 'EOF'
+                ssh -o StrictHostKeyChecking=no ubuntu@13.201.43.234 << 'EOF'
                     docker pull 232932848445.dkr.ecr.ap-south-1.amazonaws.com/churn-api:latest
                     docker stop churn || true
                     docker rm churn || true
