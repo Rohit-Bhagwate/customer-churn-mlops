@@ -11,7 +11,7 @@ import mlflow.sklearn
 import os
 import boto3
 
-mlflow.set_tracking_uri("http://65.2.184.33:5000")
+mlflow.set_tracking_uri("http://13.201.43.234:5000")
 def train_model(data_path):
     # MLflow setup
     mlflow.set_experiment("churn_simple")
